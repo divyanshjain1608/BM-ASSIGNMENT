@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { INITIAL_BILLS } from "../../utils/constants";
+import { INITIAL_BILLS, MONTHLY_BUDGET } from "../../utils/constants";
 
 const initialState = {
   bills: INITIAL_BILLS,
   selectedCategory: "all",
+  monthlyBudget: MONTHLY_BUDGET,
 };
 
 const billsSlice = createSlice({
@@ -28,9 +29,18 @@ const billsSlice = createSlice({
     setCategory: (state, action) => {
       state.selectedCategory = action.payload;
     },
+    setHighlightedBills: (state, action) => {
+      // payload = array of bill IDs
+      state.highlightedBills = action.payload;
+    },
   },
 });
 
-export const { addBill, editBill, removeBill, setCategory } =
-  billsSlice.actions;
+export const {
+  addBill,
+  editBill,
+  removeBill,
+  setCategory,
+  setHighlightedBills,
+} = billsSlice.actions;
 export default billsSlice.reducer;

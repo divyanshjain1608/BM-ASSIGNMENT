@@ -1,3 +1,5 @@
+export const MONTHLY_BUDGET = 5000;
+
 export const CATEGORIES = [
   { value: "all", label: "All Categories" },
   { value: "FoodNDining", label: "FoodNDining" },
@@ -35,7 +37,7 @@ export const INITIAL_BILLS = [
     id: 4,
     description: "House rent",
     category: "Food & Dining",
-    amount: 35900,
+    amount: 2900,
     date: "01-03-2020",
   },
   {
