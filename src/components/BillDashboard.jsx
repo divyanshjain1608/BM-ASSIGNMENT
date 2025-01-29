@@ -21,6 +21,7 @@ function BillDashboard() {
   const selectedCategory = useSelector((state) => state.bills.selectedCategory);
   const highlightedBills = useSelector((state) => state.bills.highlightedBills);
   const monthlyBudget = useSelector((state) => state.bills.monthlyBudget);
+  const isBudgetExceeded = useSelector((state) => state.bills.isBudgetExceeded); // Add this line
 
   useEffect(() => {
     if (allBills.length > 0) {
@@ -49,6 +50,14 @@ function BillDashboard() {
 
   return (
     <>
+      {/* Budget Alert Notification */}
+      {isBudgetExceeded && (
+        <div className="fixed top-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center space-x-2 z-50">
+          <span>⚠️</span>
+          <span>Your expenses have exceeded the monthly budget!</span>
+        </div>
+      )}
+
       <div className="bg-white rounded-lg shadow p-4 max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 md:mb-0">
