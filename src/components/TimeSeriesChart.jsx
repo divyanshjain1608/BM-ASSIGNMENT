@@ -27,7 +27,7 @@ const TimeSeriesChart = () => {
   }, [bills]);
 
   return (
-    <div className="bg-gray-900 border border-gray-700 shadow-lg rounded-lg">
+    <div className="bg-white-900 border border-gray-700 shadow-lg rounded-lg">
       <div className="p-6 space-y-6">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
           <div>
